@@ -1,0 +1,10 @@
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width as needed */
+    gap: 10px; /* Adjust gap between images */
+}
+
+.image-item {
+    width: 200px; /* Ensure images take up full width of their grid cell */
+    height: 200px; /* Maintain aspect ratio */
+}
