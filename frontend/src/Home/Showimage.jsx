@@ -65,7 +65,7 @@ const Showimage = () => {
         setImageError(!imageError);
     }
     return (<>
-        {!imageError&&<div>
+        {<div>
             {imageId && <img src={imageId} alt="Image" width="200px" height="200px" onError={handleImageError} />}
             <DeleteIcon onClick={handleDelete}  sx={{color:"##181a19",cursor:"pointer"}}/>
         </div>}
