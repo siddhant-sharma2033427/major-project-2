@@ -130,3 +130,19 @@ export const getAllImage = async ()=>{
         console.log("error occured")
     }
 }
+export const deleteImage = async (id)=>{
+    try {
+        const result = await axios.delete(`${url}/imageDelete/${id}`)
+        return result;
+    } catch (error) {
+        console.log("error while deleteing image")
+    }
+}
+export const deleteAllImage = async ()=>{
+    try {
+        const result = await axios.delete(`${url}/imageDeleteAll`);
+        return result;
+    } catch (error) {
+        console.log("error while delete all image")
+    }
+}

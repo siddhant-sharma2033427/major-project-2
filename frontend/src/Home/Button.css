@@ -1,40 +1,22 @@
-.container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .container > div {
-    text-align: center;
-    border:3px solid black;
-    box-shadow: 3px 3px;
-    cursor: pointer;
-  }
-  
-  .container > div img {
-    width: 300px;
-    height: 300px;
-  }
-  
-  .container > div h3 {
-    margin-top: 10px;
-  }
-
-.imagecontainer{
-    display:flex;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  grid-template-rows: repeat(2, 1fr); /* Two rows */
+  gap: 20px; /* Adjust the gap between grid items */
 }
-.imagecontainer > div {
-    text-align: center;
-    border:3px solid black;
-    box-shadow: 3px 3px;
-    cursor: pointer;
-    margin:5px;
-  }
-  .imagecontainer > div img {
-    width: 300px;
-    height: 300px;
-  }
-  .imagecontainer > div h3 {
-    margin-top: 10px;
-  }
+
+.grid-container > div {
+  text-align: center;
+  border: 3px solid black;
+  box-shadow: 3px 3px;
+  cursor: pointer;
+}
+
+.grid-container > div img {
+  width: 300px;
+  height: 300px;
+}
+
+.grid-container > div h3 {
+  margin-top: 10px;
+}
