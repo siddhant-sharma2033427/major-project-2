@@ -33,3 +33,36 @@ export const allImage = async (req,res) =>{
   }
 }
 
+export const imageDeleteAll = async (req, res) => {
+  try {
+      // Delete all documents from the logs collection
+      const result = await Plant_image.deleteMany({});
+      console.log(`${result.deletedCount} Image deleted successfully.`);
+      return res.status(201).json({ success: true, message: `${result.deletedCount} logs deleted successfully.` })
+  } catch (error) {
+      console.error("Error deleting image:", error);
+      throw error;
+  }
+}
+
+export const imageDelete = async (req,res) =>{
+  try {
+    const imageId = req.params.id;
+    
+    // Find the image by ID
+    const image = await Plant_image.findByIdAndDelete(imageId);
+    
+    if (!image) {
+        return res.status(404).json({ error: 'Image not found' });
+    }
+
+    // Delete the image
+    // await image.remove();
+    
+    // Respond with success message
+    res.json({ message: 'Image deleted successfully' });
+} catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error',error });
+}
+}

@@ -3,7 +3,7 @@ const route = express.Router();
 import {Getdata,Updaterelay,UpdateTemperature,UpdateMoisture,newData,captureImage,UpdateMorter,getImage,getImageIdStr,Getrelay,getCaptureImage,getMorter,getMoisture,getHumidity,updateHumidity,getTemperature,getImageId} from "../controller/sensordata.js"
 import {addlogs,gettlogs,deletelogs,streamAllLogs} from "../controller/logController.js"
 
-import { image_data,allImage } from '../controller/imagecontroller.js';
+import { image_data,allImage,imageDeleteAll,imageDelete } from '../controller/imagecontroller.js';
 
 route.post('/addData',newData);
 route.get('/sensordata',Getdata);
@@ -26,6 +26,8 @@ route.get('/getImagestr',getImageId);
 //image
 route.get('/image/:id',image_data)
 route.get('/getAllImage',allImage)
+route.delete('/imageDeleteAll',imageDeleteAll)
+route.delete('/imageDelete/:id',imageDelete)
 
 //logs
 route.post('/addlogs',addlogs);
