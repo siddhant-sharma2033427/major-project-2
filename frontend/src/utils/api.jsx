@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const url = 'http://localhost:8000';
+const url = 'https://major-project-2-1.onrender.com';
 
 export const getRelay = async ()=>{
     try {
