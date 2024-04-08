@@ -39,7 +39,8 @@ const Showimage = () => {
         const test = async () => {
             const id = await getImagestr();
             setImageIdStr(id.data.result[0].imageIdStr); // Setting imageIdStr
-            setImageId(`http://localhost:8000/image/${id.data.result[0].imageIdStr}`);
+            // setImageId(`http://localhost:8000/image/${id.data.result[0].imageIdStr}`);
+            setImageId(`https://major-project-2-1.onrender.com/image/${id.data.result[0].imageIdStr}`);
         }
         test();
     }, []);
